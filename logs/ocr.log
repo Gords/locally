@@ -1,0 +1,294 @@
+load_backend: loaded BLAS backend from /opt/homebrew/Cellar/ggml/0.10.0/libexec/libggml-blas.so
+ggml_metal_device_init: tensor API disabled for pre-M5 and pre-A19 devices
+ggml_metal_library_init: using embedded metal library
+ggml_metal_library_init: loaded in 0.022 sec
+ggml_metal_rsets_init: creating a residency set collection (keep_alive = 180 s)
+ggml_metal_device_init: GPU name:   MTL0
+ggml_metal_device_init: GPU family: MTLGPUFamilyApple9  (1009)
+ggml_metal_device_init: GPU family: MTLGPUFamilyCommon3 (3003)
+ggml_metal_device_init: GPU family: MTLGPUFamilyMetal4  (5002)
+ggml_metal_device_init: simdgroup reduction   = true
+ggml_metal_device_init: simdgroup matrix mul. = true
+ggml_metal_device_init: has unified memory    = true
+ggml_metal_device_init: has bfloat            = true
+ggml_metal_device_init: has tensor            = false
+ggml_metal_device_init: use residency sets    = true
+ggml_metal_device_init: use shared buffers    = true
+ggml_metal_device_init: recommendedMaxWorkingSetSize  = 12713.12 MB
+load_backend: loaded MTL backend from /opt/homebrew/Cellar/ggml/0.10.0/libexec/libggml-metal.so
+load_backend: loaded CPU backend from /opt/homebrew/Cellar/ggml/0.10.0/libexec/libggml-cpu-apple_m4.so
+migrate_old_cache_to_hf_cache: skipping migration in offline mode (will run when online)
+common_download_file_single: required file is not available in cache (offline mode): /Users/fernando/Library/Caches/llama.cpp/ggml-org_GLM-OCR-GGUF_preset.ini
+no remote preset found, skipping
+main: n_parallel is set to auto, using n_parallel = 4 and kv_unified = true
+build_info: b8890-8bccdbbff
+system_info: n_threads = 4 (n_threads_batch = 4) / 10 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | FP16_VA = 1 | MATMUL_INT8 = 1 | DOTPROD = 1 | SME = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | 
+Running without SSL
+init: using 9 threads for HTTP server
+start: binding port with default address family
+main: loading model
+srv    load_model: loading model '/Users/fernando/.cache/huggingface/hub/models--ggml-org--GLM-OCR-GGUF/snapshots/65a42de1148dbed2297e922b5dbc7d9b70c36578/GLM-OCR-Q8_0.gguf'
+common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
+common_params_fit_impl: getting device memory data for initial parameters:
+common_memory_breakdown_print: | memory breakdown [MiB] | total    free    self   model   context   compute       unaccounted |
+common_memory_breakdown_print: |   - MTL0 (Apple M4)    | 12124 = 12123 + (1224 =   590 +     512 +     122) + 17592186043192 |
+common_memory_breakdown_print: |   - Host               |                   136 =    92 +       0 +      44                   |
+common_params_fit_impl: projected to use 1224 MiB of device memory vs. 12123 MiB of free device memory
+common_params_fit_impl: will leave 10899 >= 1024 MiB of free device memory, no changes needed
+common_fit_params: successfully fit params to free device memory
+common_fit_params: fitting params to free memory took 0.06 seconds
+llama_model_load_from_file_impl: using device MTL0 (Apple M4) (unknown id) - 12123 MiB free
+llama_model_loader: loaded meta data with 32 key-value pairs and 179 tensors from /Users/fernando/.cache/huggingface/hub/models--ggml-org--GLM-OCR-GGUF/snapshots/65a42de1148dbed2297e922b5dbc7d9b70c36578/GLM-OCR-Q8_0.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = glm4
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                         general.size_label str              = 891M
+llama_model_loader: - kv   3:                            general.license str              = mit
+llama_model_loader: - kv   4:                               general.tags arr[str,1]       = ["image-to-text"]
+llama_model_loader: - kv   5:                          general.languages arr[str,8]       = ["zh", "en", "fr", "es", "ru", "de", ...
+llama_model_loader: - kv   6:                           glm4.block_count u32              = 17
+llama_model_loader: - kv   7:                        glm4.context_length u32              = 131072
+llama_model_loader: - kv   8:                      glm4.embedding_length u32              = 1536
+llama_model_loader: - kv   9:                   glm4.feed_forward_length u32              = 4608
+llama_model_loader: - kv  10:                  glm4.attention.head_count u32              = 16
+llama_model_loader: - kv  11:               glm4.attention.head_count_kv u32              = 8
+llama_model_loader: - kv  12:               glm4.rope.dimension_sections arr[i32,4]       = [16, 24, 24, 0]
+llama_model_loader: - kv  13:                        glm4.rope.freq_base f32              = 10000.000000
+llama_model_loader: - kv  14:      glm4.attention.layer_norm_rms_epsilon f32              = 0.000010
+llama_model_loader: - kv  15:                  glm4.attention.key_length u32              = 128
+llama_model_loader: - kv  16:                glm4.attention.value_length u32              = 128
+llama_model_loader: - kv  17:                  glm4.rope.dimension_count u32              = 128
+llama_model_loader: - kv  18:                  glm4.nextn_predict_layers u32              = 1
+llama_model_loader: - kv  19:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  20:                         tokenizer.ggml.pre str              = chatglm-bpe
+llama_model_loader: - kv  21:                      tokenizer.ggml.tokens arr[str,59392]   = ["Ā", "ā", "Ă", "ă", "Ą", "ą", ...
+llama_model_loader: - kv  22:                  tokenizer.ggml.token_type arr[i32,59392]   = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  23:                      tokenizer.ggml.merges arr[str,106026]  = ["Ġ Ġ", "Ġ ĠĠĠ", "ĠĠ ĠĠ", "...
+llama_model_loader: - kv  24:                tokenizer.ggml.eos_token_id u32              = 59246
+llama_model_loader: - kv  25:            tokenizer.ggml.padding_token_id u32              = 59246
+llama_model_loader: - kv  26:                tokenizer.ggml.eot_token_id u32              = 59253
+llama_model_loader: - kv  27:            tokenizer.ggml.unknown_token_id u32              = 59246
+llama_model_loader: - kv  28:                tokenizer.ggml.bos_token_id u32              = 59246
+llama_model_loader: - kv  29:                    tokenizer.chat_template str              = [gMASK]<sop>\n{%- macro visible_text(c...
+llama_model_loader: - kv  30:               general.quantization_version u32              = 2
+llama_model_loader: - kv  31:                          general.file_type u32              = 7
+llama_model_loader: - type  f32:   72 tensors
+llama_model_loader: - type q8_0:  107 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q8_0
+print_info: file size   = 903.28 MiB (8.50 BPW) 
+load: 0 unused tokens
+load: special_eot_id is not in special_eog_ids - the tokenizer config may be incorrect
+load: printing all EOG tokens:
+load:   - 59246 ('<|endoftext|>')
+load:   - 59253 ('<|user|>')
+load: special tokens cache size = 36
+load: token to piece cache size = 0.3380 MB
+print_info: arch                  = glm4
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 131072
+print_info: n_embd                = 1536
+print_info: n_embd_inp            = 1536
+print_info: n_layer               = 17
+print_info: n_head                = 16
+print_info: n_head_kv             = 8
+print_info: n_rot                 = 128
+print_info: n_swa                 = 0
+print_info: is_swa_any            = 0
+print_info: n_embd_head_k         = 128
+print_info: n_embd_head_v         = 128
+print_info: n_gqa                 = 2
+print_info: n_embd_k_gqa          = 1024
+print_info: n_embd_v_gqa          = 1024
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-05
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: n_ff                  = 4608
+print_info: n_expert              = 0
+print_info: n_expert_used         = 0
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = -1
+print_info: rope type             = 8
+print_info: rope scaling          = linear
+print_info: freq_base_train       = 10000.0
+print_info: freq_scale_train      = 1
+print_info: n_ctx_orig_yarn       = 131072
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: mrope sections        = [16, 24, 24, 0]
+print_info: model type            = 1B
+print_info: model params          = 891.14 M
+print_info: general.name          = n/a
+print_info: vocab type            = BPE
+print_info: n_vocab               = 59392
+print_info: n_merges              = 106026
+print_info: BOS token             = 59246 '<|endoftext|>'
+print_info: EOS token             = 59246 '<|endoftext|>'
+print_info: EOT token             = 59253 '<|user|>'
+print_info: UNK token             = 59246 '<|endoftext|>'
+print_info: PAD token             = 59246 '<|endoftext|>'
+print_info: LF token              = 10 'Ċ'
+print_info: FIM PRE token         = 59264 '<|code_prefix|>'
+print_info: FIM SUF token         = 59266 '<|code_suffix|>'
+print_info: FIM MID token         = 59265 '<|code_middle|>'
+print_info: EOG token             = 59246 '<|endoftext|>'
+print_info: EOG token             = 59253 '<|user|>'
+print_info: max token length      = 192
+load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+model has unused tensor blk.16.attn_norm.weight (size = 6144 bytes) -- ignoring
+model has unused tensor blk.16.attn_q.weight (size = 3342336 bytes) -- ignoring
+model has unused tensor blk.16.attn_k.weight (size = 1671168 bytes) -- ignoring
+model has unused tensor blk.16.attn_v.weight (size = 1671168 bytes) -- ignoring
+model has unused tensor blk.16.attn_output.weight (size = 3342336 bytes) -- ignoring
+model has unused tensor blk.16.post_attention_norm.weight (size = 6144 bytes) -- ignoring
+model has unused tensor blk.16.ffn_norm.weight (size = 6144 bytes) -- ignoring
+model has unused tensor blk.16.ffn_down.weight (size = 7520256 bytes) -- ignoring
+model has unused tensor blk.16.ffn_up.weight (size = 15040512 bytes) -- ignoring
+model has unused tensor blk.16.post_ffw_norm.weight (size = 6144 bytes) -- ignoring
+model has unused tensor blk.16.nextn.eh_proj.weight (size = 5013504 bytes) -- ignoring
+model has unused tensor blk.16.nextn.enorm.weight (size = 6144 bytes) -- ignoring
+model has unused tensor blk.16.nextn.hnorm.weight (size = 6144 bytes) -- ignoring
+model has unused tensor blk.16.nextn.embed_tokens.weight (size = 96927744 bytes) -- ignoring
+model has unused tensor blk.16.nextn.shared_head_head.weight (size = 96927744 bytes) -- ignoring
+model has unused tensor blk.16.nextn.shared_head_norm.weight (size = 6144 bytes) -- ignoring
+load_tensors: offloading output layer to GPU
+load_tensors: offloading 16 repeating layers to GPU
+load_tensors: offloaded 18/18 layers to GPU
+load_tensors:   CPU_Mapped model buffer size =    92.44 MiB
+load_tensors:  MTL0_Mapped model buffer size =   682.51 MiB
+..........................................................
+common_init_result: added <|endoftext|> logit bias = -inf
+common_init_result: added <|user|> logit bias = -inf
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 4
+llama_context: n_ctx         = 8192
+llama_context: n_ctx_seq     = 8192
+llama_context: n_batch       = 2048
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = auto
+llama_context: kv_unified    = true
+llama_context: freq_base     = 10000.0
+llama_context: freq_scale    = 1
+llama_context: n_ctx_seq (8192) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+llama_context:        CPU  output buffer size =     0.91 MiB
+llama_kv_cache:       MTL0 KV buffer size =   512.00 MiB
+llama_kv_cache: size =  512.00 MiB (  8192 cells,  16 layers,  4/1 seqs), K (f16):  256.00 MiB, V (f16):  256.00 MiB
+llama_kv_cache: attn_rot_k = 0, n_embd_head_k_all = 128
+llama_kv_cache: attn_rot_v = 0, n_embd_head_k_all = 128
+sched_reserve: reserving ...
+sched_reserve: Flash Attention was auto, set to enabled
+sched_reserve: resolving fused Gated Delta Net support:
+sched_reserve: fused Gated Delta Net (autoregressive) enabled
+sched_reserve: fused Gated Delta Net (chunked) enabled
+sched_reserve:       MTL0 compute buffer size =   122.00 MiB
+sched_reserve:        CPU compute buffer size =    22.02 MiB
+sched_reserve: graph nodes  = 551
+sched_reserve: graph splits = 2
+sched_reserve: reserve took 5.54 ms, sched copies = 1
+common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+clip_model_loader: model name:   
+clip_model_loader: description:  
+clip_model_loader: GGUF version: 3
+clip_model_loader: alignment:    32
+clip_model_loader: n_tensors:    348
+clip_model_loader: n_kv:         21
+
+clip_model_loader: has vision encoder
+ggml_metal_init: allocating
+ggml_metal_init: found device: Apple M4
+ggml_metal_init: picking default device: Apple M4
+ggml_metal_init: use fusion         = true
+ggml_metal_init: use concurrency    = true
+ggml_metal_init: use graph optimize = true
+clip_ctx: CLIP using MTL0 backend
+load_hparams: projector:          glm4v
+load_hparams: n_embd:             1024
+load_hparams: n_head:             16
+load_hparams: n_ff:               4096
+load_hparams: n_layer:            24
+load_hparams: ffn_op:             silu
+load_hparams: projection_dim:     1536
+
+--- vision hparams ---
+load_hparams: image_size:         336
+load_hparams: patch_size:         14
+load_hparams: has_llava_proj:     0
+load_hparams: minicpmv_version:   0
+load_hparams: n_merge:            2
+load_hparams: n_wa_pattern: 0
+load_hparams: image_min_pixels:   6272
+load_hparams: image_max_pixels:   3211264
+
+load_hparams: model size:         461.94 MiB
+load_hparams: metadata size:      0.12 MiB
+warmup: warmup with image size = 1288 x 1288
+alloc_compute_meta:       MTL0 compute buffer size =   481.99 MiB
+alloc_compute_meta:        CPU compute buffer size =    19.11 MiB
+alloc_compute_meta: graph splits = 1, nodes = 837
+warmup: flash attention is enabled
+srv    load_model: loaded multimodal model, '/Users/fernando/.cache/huggingface/hub/models--ggml-org--GLM-OCR-GGUF/snapshots/65a42de1148dbed2297e922b5dbc7d9b70c36578/mmproj-GLM-OCR-Q8_0.gguf'
+srv    load_model: initializing slots, n_slots = 4
+no implementations specified for speculative decoding
+slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192
+no implementations specified for speculative decoding
+slot   load_model: id  1 | task -1 | new slot, n_ctx = 8192
+no implementations specified for speculative decoding
+slot   load_model: id  2 | task -1 | new slot, n_ctx = 8192
+no implementations specified for speculative decoding
+slot   load_model: id  3 | task -1 | new slot, n_ctx = 8192
+srv    load_model: prompt cache is enabled, size limit: 8192 MiB
+srv    load_model: use `--cache-ram 0` to disable the prompt cache
+srv    load_model: for more info see https://github.com/ggml-org/llama.cpp/pull/16391
+srv          init: init: idle slots will be saved to prompt cache and cleared upon starting a new task
+init: chat template, example_format: '[gMASK]<sop><|system|>
+You are a helpful assistant<|user|>
+Hello<|assistant|>
+Hi there<|user|>
+How are you?<|assistant|>'
+srv          init: init: chat template, thinking = 0
+main: model loaded
+main: server is listening on http://127.0.0.1:8080
+main: starting the main loop...
+srv  update_slots: all slots are idle
+srv  params_from_: Chat format: peg-native
+slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+srv  get_availabl: updating prompt cache
+srv          load:  - looking for better prompt, base f_keep = -1.000, sim = 0.000
+srv        update:  - cache state: 0 prompts, 0.000 MiB (limits: 8192.000 MiB, 8192 tokens, 8589934592 est)
+srv  get_availabl: prompt cache update took 0.08 ms
+slot launch_slot_: id  3 | task -1 | sampler chain: logits -> ?penalties -> ?dry -> ?top-n-sigma -> top-k -> ?typical -> top-p -> min-p -> ?xtc -> temp-ext -> dist 
+slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+slot update_slots: id  3 | task 0 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 4090
+slot update_slots: id  3 | task 0 | n_tokens = 0, memory_seq_rm [0, end)
+slot update_slots: id  3 | task 0 | prompt processing progress, n_tokens = 5, batch.n_tokens = 5, progress = 0.001222
+slot update_slots: id  3 | task 0 | n_tokens = 5, memory_seq_rm [5, end)
+srv  process_chun: processing image...
+encoding image slice...
+image slice encoded in 16850 ms
+decoding image batch 1/2, n_tokens_batch = 2048
+image decoded (batch 1/2) in 543 ms
+decoding image batch 2/2, n_tokens_batch = 1967
+image decoded (batch 2/2) in 915 ms
+srv  process_chun: image processed in 18308 ms
+slot init_sampler: id  3 | task 0 | init sampler, took 0.01 ms, tokens: text = 75, total = 4090
+slot update_slots: id  3 | task 0 | prompt processing done, n_tokens = 4090, batch.n_tokens = 70
+slot print_timing: id  3 | task 0 | 
+prompt eval time =   18594.46 ms /  4090 tokens (    4.55 ms per token,   219.96 tokens per second)
+       eval time =    1279.63 ms /   119 tokens (   10.75 ms per token,    93.00 tokens per second)
+      total time =   19874.09 ms /  4209 tokens
+slot      release: id  3 | task 0 | stop processing: n_tokens = 4208, truncated = 0
+srv  update_slots: all slots are idle
+srv  log_server_r: done request: POST /v1/chat/completions 127.0.0.1 200

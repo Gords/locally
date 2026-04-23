@@ -1,0 +1,18 @@
+[paths]
+inbox = "data/inbox"
+processed = "data/processed"
+failed = "data/failed"
+db = "data/data.db"
+
+[ocr]
+base_url = "http://localhost:8080"
+model_name = "ggml-org/GLM-OCR-GGUF:Q8_0"
+prompt = "OCR this entire document. Transcribe every visible line of text — headers, addresses, dates, invoice/reference numbers, party names, all line items, subtotals, totals, footers, and any handwriting. Preserve reading order top-to-bottom, left-to-right. Do not summarize. Do not skip anything."
+max_image_edge = 2048
+timeout_seconds = 180
+
+[structure]
+base_url = "http://localhost:8081"
+model_name = "unsloth/Qwen3.5-4B-GGUF:Q4_K_M"
+timeout_seconds = 180
+max_retries = 1
